@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio Web Developer - Project belajar Fundamental Frontend Web Development">
+  <title>Junior Web Developer | Portfolio</title>
+  
+  <!-- Favicon placeholder (SVG inline data URI) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+</head>
+<body>
+  <!-- Header / Navigation Bar -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="#hero" class="logo">
+        <span>Dev</span><span class="logo-accent">Folio</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">Tentang</a></li>
+          <li><a href="#skills" class="nav-link">Skill</a></li>
+          <li><a href="#projects" class="nav-link">Project</a></li>
+          <li><a href="#contact" class="nav-link">Kontak</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Ganti Tema">
+          🌙
+        </button>
+        <button id="hamburger" class="hamburger" aria-label="Menu Navigasi">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="status-dot"></span>
+            <span>Siap Belajar & Berkolaborasi</span>
+          </div>
+          <h1 class="hero-title">
+            Halo, Saya <span class="gradient-text">Web Developer</span>
+          </h1>
+          <p class="hero-description">
+            Selamat datang di website portofolio pertama saya! Saya sedang mendalami dunia 
+            <strong>Frontend Web Development</strong> dengan fokus pada semantic HTML5, 
+            modern CSS3 (Flexbox & Grid), dan Vanilla JavaScript interaktif.
+          </p>
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">Lihat Project Saya 🚀</a>
+            <a href="#contact" class="btn btn-secondary">Hubungi Saya 💬</a>
+          </div>
+          <div class="social-links">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
+              🐙
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+              💼
+            </a>
+            <a href="mailto:halo@example.com" class="social-icon" aria-label="Email">
+              ✉️
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-image-wrapper">
+          <div class="avatar-card">
+            <div class="avatar-placeholder">👨‍💻</div>
+            <h2 class="avatar-name">Nama Anda</h2>
+            <p class="avatar-role">Aspiring Frontend Developer</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-tag">Perkenalan</span>
+          <h2 class="section-title">Tentang Saya</h2>
+          <p class="section-subtitle">
+            Mengenal lebih dekat perjalanan saya dalam mempelajari arsitektur web modern.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              Saya adalah seorang antusias teknologi yang bersemangat menciptakan antarmuka web yang bersih, responsif, dan mudah diakses oleh siapa saja.
+            </p>
+            <p>
+              Fokus pembelajaran saat ini adalah menguasai fondasi dasar sebelum melangkah ke framework modern seperti React atau Next.js. Bagi saya, memahami cara kerja native browser, DOM tree, dan alur rendering adalah kunci menjadi developer yang handal.
+            </p>
+            <div class="stats-grid">
+              <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Dedikasi Belajar</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">4+</div>
+                <div class="stat-label">Project Latihan</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">Modern</div>
+                <div class="stat-label">Tech Standards</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="about-highlights">
+            <div class="skill-card">
+              <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">🎯 Visi & Tujuan</h3>
+              <p style="color: var(--text-secondary); line-height: 1.6;">
+                Membangun aplikasi web dengan performa tinggi, kode yang terstruktur rapi (clean code), dan desain yang ramah pengguna (UI/UX).
+              </p>
+            </div>
+            <div class="skill-card" style="margin-top: 1rem;">
+              <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">💡 Filosofi Belajar</h3>
+              <p style="color: var(--text-secondary); line-height: 1.6;">
+                <em>"Learn by doing"</em> — langsung mempraktekkan teori ke dalam kode nyata, memecahkan error, dan membangun portofolio riil.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-tag">Keahlian</span>
+          <h2 class="section-title">Keahlian & Teknologi</h2>
+          <p class="section-subtitle">
+            Teknologi dan perkakas yang saya pelajari dan terapkan dalam pembuatan web.
+          </p>
+        </div>
+
+        <div class="skills-container" id="skills-container">
+          <!-- Rendered dynamically by js/main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-tag">Karya</span>
+          <h2 class="section-title">Project Pilihan</h2>
+          <p class="section-subtitle">
+            Koleksi project yang saya kembangkan untuk mengasah keterampilan frontend.
+          </p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all">Semua Project</button>
+          <button class="filter-btn" data-filter="web">Web Portfolio</button>
+          <button class="filter-btn" data-filter="app">Web App & Logika</button>
+          <button class="filter-btn" data-filter="landing">Landing Page</button>
+        </div>
+
+        <!-- Project Cards Container -->
+        <div class="projects-grid" id="projects-container">
+          <!-- Rendered dynamically by js/main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-tag">Hubungi</span>
+          <h2 class="section-title">Mari Terhubung</h2>
+          <p class="section-subtitle">
+            Punya pertanyaan, tawaran kolaborasi, atau sekadar ingin menyapa? Kirimkan pesan di bawah ini!
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info-card">
+            <h3 style="margin-bottom: 1.5rem; font-size: 1.3rem;">Informasi Kontak</h3>
+            
+            <div class="contact-info-item">
+              <div class="contact-icon-bubble">📧</div>
+              <div>
+                <div class="contact-info-label">Email</div>
+                <div class="contact-info-value">emailkamu@example.com</div>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-icon-bubble">📍</div>
+              <div>
+                <div class="contact-info-label">Lokasi</div>
+                <div class="contact-info-value">Indonesia</div>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-icon-bubble">💼</div>
+              <div>
+                <div class="contact-info-label">Ketersediaan</div>
+                <div class="contact-info-value">Terbuka untuk Magang & Project Pemula</div>
+              </div>
+            </div>
+          </div>
+
+          <form id="contact-form" class="contact-form">
+            <div class="form-group">
+              <label for="name" class="form-label">Nama Lengkap</label>
+              <input type="text" id="name" name="name" class="form-input" placeholder="Misal: Budi Santoso" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label">Alamat Email</label>
+              <input type="email" id="email" name="email" class="form-input" placeholder="nama@email.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="message" class="form-label">Pesan Anda</label>
+              <textarea id="message" name="message" class="form-textarea" placeholder="Tuliskan pesan atau pertanyaan Anda di sini..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              Kirim Pesan ✉️
+            </button>
+
+            <div id="form-feedback" class="form-feedback"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>&copy; 2026 Personal Portfolio. Dibuat dengan HTML5, CSS3, & Vanilla JS.</p>
+      <a href="#hero" class="back-to-top">Kembali ke Atas ↑</a>
+    </div>
+  </footer>
+
+  <!-- Script (ES6 Module) -->
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>

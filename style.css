@@ -1,68 +1,144 @@
-/* Pengaturan dasar seluruh halaman */
+/* ===================================================
+   1. PENGATURAN DASAR HALAMAN
+   =================================================== */
 body {
   margin: 0;
   font-family: sans-serif;
-  background-color: #f1f1f1;
+  background-color: #f8fafc;
+  color: #1e293b;
 }
 
-/* buat setiap slide memenuhi 1 layar penuh */
+/* ===================================================
+   2. SLIDE PENUH SATU LAYAR
+   =================================================== */
 .slide {
-  min-height: 100vh; /* 100% tinggi layar */
-  display: flex; /* Gunakan flexbox untuk memudahkan penataan */
-  justify-content: center; /* Pusatkan konten secara horizontal */
-  align-items: center; /* Pusatkan konten secara vertikal */
-  padding: 2rem; /* Tambahkan padding agar konten tidak menempel ke tepi */
-  box-sizing: border-box; /* Sertakan padding dalam perhitungan tinggi */
-
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
 }
 
-/* kotak isi tulisan */
+/* Kotak pembungkus dibagi 2 kolom menyamping */
 .slide-content {
-  max-width: 650px; /* Batasi lebar konten agar tidak terlalu lebar */
-  text-align: center; /* Pusatkan teks */
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  text-align: left;
 }
 
+/* Kolom kiri (Teks) */
+.hero-text {
+  flex: 1.2;
+}
 
+/* Kolom kanan (Animasi) */
+.hero-animation {
+  flex: 0.8;
+  display: flex;
+  justify-content: center;
+}
 
-/* Hias badge sapaan agar berbentuk kapsul */
-.badge{
+/* ===================================================
+   3. DETAIL TEKS & TOMBOL (KOLOM KIRI)
+   =================================================== */
+.badge {
   display: inline-block;
-  background-color: rgba(125, 226, 42, 0.658);
-  color: #1d4ed8;
-  padding: 0.35rem 1rem;
+  background-color: rgba(34, 197, 94, 0.2);
+  color: #15803d;
+  padding: 0.4rem 1rem;
   border-radius: 9999px;
   font-size: 0.9rem;
   font-weight: 600;
   margin-bottom: 1rem;
 }
 
-/* Rapihkan jarak tulisan nama dan penjelasan */
 h1 {
-  font-size: 2.5em;
+  font-size: 2.5rem;
   margin: 0.5rem 0;
-  color: #787c86;
+  color: #0f172a;
+  line-height: 1.2;
 }
 
-.penjelasan{
-  color:rgb(29, 55, 77);
+.penjelasan {
+  color: #475569;
   font-size: 1.1rem;
-  line-height: 1.5;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
 }
 
-/* Tombol lanjut ke slide berikutnya */
 .tombol-lanjut {
-  display: inline-block; /* Buat tombol menjadi elemen inline-block agar bisa diberi padding dan margin */
-  margin-top: 1.5rem;
-  padding: 0.75rem 1.5rem; /* Tambahkan padding agar tombol lebih besar */
-  background-color: #256325; /* warna hijau */
-  color: white; /* warna teks putih */
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  background-color: #2563eb;
+  color: white;
   text-decoration: none;
-  border-radius: 8px; /* Buat sudut tombol membulat */
-  font-weight: bold; /* Buat teks tombol lebih tebal */
-  transition: transform 0.2s, background-color 0.25; /* Tambahkan efek transisi untuk transformasi dan perubahan warna */
+  border-radius: 8px;
+  font-weight: bold;
+  transition: transform 0.2s, background-color 0.2s;
 }
 
 .tombol-lanjut:hover {
-  background-color:#1d4ed8; /* Ubah warna tombol saat dihover */
-  transform: translateY(-2px); /* Geser tombol sedikit ke atas saat dihover */
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+/* ===================================================
+   4. ANIMASI INTERAKTIF (KOLOM KANAN)
+   =================================================== */
+.kartu-animasi {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  border-radius: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  animation: melayang 3s ease-in-out infinite;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Efek saat kursor mouse mendekat */
+.kartu-animasi:hover {
+  transform: scale(1.08) rotate(2deg);
+  box-shadow: 0 25px 50px rgba(37, 99, 235, 0.4);
+}
+
+.ikon-utama {
+  font-size: 5rem;
+  user-select: none;
+}
+
+/* Kapsul kecil yang melayang */
+.item-melayang {
+  position: absolute;
+  background: white;
+  color: #0f172a;
+  padding: 0.4rem 0.85rem;
+  border-radius: 9999px;
+  font-weight: bold;
+  font-size: 0.85rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.item-1 { top: 15px; left: -25px; animation: goyang 2.5s infinite alternate; }
+.item-2 { bottom: 25px; left: -15px; animation: goyang 3.2s infinite alternate; }
+.item-3 { top: 35px; right: -25px; animation: goyang 2s infinite alternate; }
+
+/* Kunci gerakan animasi */
+@keyframes melayang {
+  0%, 100% { transform: translateY(0px); } 
+  50% { transform: translateY(-16px); }
+}
+
+@keyframes goyang {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
 }

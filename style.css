@@ -1,0 +1,68 @@
+/* Pengaturan dasar seluruh halaman */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #f1f1f1;
+}
+
+/* buat setiap slide memenuhi 1 layar penuh */
+.slide {
+  min-height: 100vh; /* 100% tinggi layar */
+  display: flex; /* Gunakan flexbox untuk memudahkan penataan */
+  justify-content: center; /* Pusatkan konten secara horizontal */
+  align-items: center; /* Pusatkan konten secara vertikal */
+  padding: 2rem; /* Tambahkan padding agar konten tidak menempel ke tepi */
+  box-sizing: border-box; /* Sertakan padding dalam perhitungan tinggi */
+
+}
+
+/* kotak isi tulisan */
+.slide-content {
+  max-width: 650px; /* Batasi lebar konten agar tidak terlalu lebar */
+  text-align: center; /* Pusatkan teks */
+}
+
+
+
+/* Hias badge sapaan agar berbentuk kapsul */
+.badge{
+  display: inline-block;
+  background-color: rgba(125, 226, 42, 0.658);
+  color: #1d4ed8;
+  padding: 0.35rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Rapihkan jarak tulisan nama dan penjelasan */
+h1 {
+  font-size: 2.5em;
+  margin: 0.5rem 0;
+  color: #787c86;
+}
+
+.penjelasan{
+  color:rgb(29, 55, 77);
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+/* Tombol lanjut ke slide berikutnya */
+.tombol-lanjut {
+  display: inline-block; /* Buat tombol menjadi elemen inline-block agar bisa diberi padding dan margin */
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem; /* Tambahkan padding agar tombol lebih besar */
+  background-color: #256325; /* warna hijau */
+  color: white; /* warna teks putih */
+  text-decoration: none;
+  border-radius: 8px; /* Buat sudut tombol membulat */
+  font-weight: bold; /* Buat teks tombol lebih tebal */
+  transition: transform 0.2s, background-color 0.25; /* Tambahkan efek transisi untuk transformasi dan perubahan warna */
+}
+
+.tombol-lanjut:hover {
+  background-color:#1d4ed8; /* Ubah warna tombol saat dihover */
+  transform: translateY(-2px); /* Geser tombol sedikit ke atas saat dihover */
+}

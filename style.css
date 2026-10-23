@@ -142,3 +142,102 @@ h1 {
   0% { transform: translateY(0); }
   100% { transform: translateY(-10px); }
 }
+
+/* ========= SILDE 1 Bagian 2 ========= */
+
+/* 1. Kunci agar scroll bergerak halus (tidak kaget) */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 2. Pengaturan wadah Slide 2 */
+.slide-detail {
+  background-color: #ffffff; /* latar putih */
+  align-items: flex-start; /* konten di atas */
+  padding-top: 5rem; /* Jarak dari atas */
+  padding-bottom:5rem; /* Jarak dari bawah */
+
+}
+
+/* Pengaturan wadah konten detail */
+.detail-container { 
+  width: 100%; /* Lebar penuh */
+  max-width: 900px; /* Lebar maksimal */
+  margin: 0 auto; /* Tengah horizontal */
+}
+
+.judul-section {
+  text-align: center; /* Tengah horizontal */
+  margin-bottom: 3rem; /* Jarak bawah */
+}
+
+.judul-section h2 {
+  font-size: 2rem; /* Ukuran font */
+  margin: 0.5rem 0; /* Jarak atas dan bawah */
+  color: #1b21c9;
+}
+
+.judul-section p{
+  color: #64748b; /* warna abu-abu */
+  font-size: 1.50rem; /* ukuran font */
+}
+
+/* Kartu Grid (Menyusun kartu bersebelahan) */
+.grid-kartu {
+  display: grid; /* Gunakan grid */
+  grid-template-columns:  1fr 1fr; /* 2 kolom sama besar */
+  gap: 1.5rem; /* Jarak antar kartu */
+}
+
+.kartu-info {
+  background-color: #f8fafc; 
+  border: 1px solid #e2e8f0; /* warna abu-abu muda */
+  border-radius: 12px; /* sudut membulat */
+  padding: 1.5rem; /* jarak dalam */
+  transition: transform 0.25s, box-shadow 0.2s; /* efek transisi */
+}
+
+.kartu-info:hover { /* efek saat kursor mendekat */
+  transform: translateY(-5px); /* sedikit naik saat disentuh kursor */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06); /* bayangan lebih besar saat disentuh kursor */
+}
+
+.kartu-lebar {
+  grid-column: 1 / -1; /* Kartu membentang seluruh kolom */
+}
+
+.ikon-kartu {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.kartu-info h3 {
+  margin: 0 0 0.75rem 0;
+  color: #1e293b;
+  font-size: 1.25rem;
+}
+.kartu-info p {
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+}
+/* List hobi */
+.list-hobi {
+  padding-left: 1.2rem;
+  color: #475569;
+  line-height: 1.8;
+  margin-top: 0.5rem;
+}
+/* Format teks pengalaman */
+.item-pengalaman h4 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 1.05rem;
+}
+.item-pengalaman .waktu {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: #2563eb;
+  font-weight: bold;
+  margin: 0.2rem 0 0.5rem 0;
+}
+

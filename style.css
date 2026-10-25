@@ -241,3 +241,33 @@ html {
   margin: 0.2rem 0 0.5rem 0;
 }
 
+/* Styling detail item pengalaman kerja */
+.item-pengalaman {
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px dashed #cbd5e1; /* Garis putus-putus pembatas antar pekerjaan */
+}
+
+.item-pengalaman:last-child {
+  border-bottom: none; /* Hilangkan garis di item terakhir */
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.instansi {
+  color: #475569;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0.2rem 0 0.5rem 0;
+}
+
+.list-tugas {
+  margin: 0.4rem 0 0 1.2rem;
+  padding: 0;
+  color: #334155;
+  line-height: 1.6;
+}
+
+.list-tugas li {
+  margin-bottom: 0.35rem;
+}

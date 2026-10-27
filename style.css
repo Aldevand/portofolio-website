@@ -1,257 +1,264 @@
 /* ===================================================
-   1. PENGATURAN DASAR HALAMAN
+   1. GLOBAL RESET & BASE STYLING
    =================================================== */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  font-family: sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   background-color: #f8fafc;
   color: #1e293b;
+  line-height: 1.6;
 }
 
 /* ===================================================
-   2. SLIDE PENUH SATU LAYAR
+   2. SLIDE STRUCTURE & LAYOUT
    =================================================== */
 .slide {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 2rem;
+  align-items: flex-start;
+  padding: 4rem 1.5rem;
   box-sizing: border-box;
 }
 
-/* Kotak pembungkus dibagi 2 kolom menyamping */
-.slide-content {
+.slide-container {
   width: 100%;
-  max-width: 1000px;
+  max-width: 1050px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+/* Common Badge Style */
+.badge {
+  display: inline-block;
+  background-color: rgba(37, 99, 235, 0.1);
+  color: #2563eb;
+  padding: 0.35rem 0.9rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+/* ===================================================
+   3. SLIDE 1: TOP HERO SECTION (Intro + Animation)
+   =================================================== */
+.hero-section {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 3rem;
-  text-align: left;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
-/* Kolom kiri (Teks) */
 .hero-text {
   flex: 1.2;
 }
 
-/* Kolom kanan (Animasi) */
+.hero-text h1 {
+  font-size: 2.75rem;
+  font-weight: 800;
+  margin: 0.5rem 0 1rem 0;
+  color: #0f172a;
+  line-height: 1.15;
+}
+
+.penjelasan {
+  color: #475569;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.tombol-lanjut {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.75rem;
+  background-color: #2563eb;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+  transition: all 0.25s ease;
+}
+
+.tombol-lanjut:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.45);
+}
+
+/* Hero Interactive Animated Card */
 .hero-animation {
   flex: 0.8;
   display: flex;
   justify-content: center;
 }
 
-/* ===================================================
-   3. DETAIL TEKS & TOMBOL (KOLOM KIRI)
-   =================================================== */
-.badge {
-  display: inline-block;
-  background-color: rgba(34, 197, 94, 0.2);
-  color: #15803d;
-  padding: 0.4rem 1rem;
-  border-radius: 9999px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-h1 {
-  font-size: 2.5rem;
-  margin: 0.5rem 0;
-  color: #0f172a;
-  line-height: 1.2;
-}
-
-.penjelasan {
-  color: #475569;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-}
-
-.tombol-lanjut {
-  display: inline-block;
-  padding: 0.8rem 1.6rem;
-  background-color: #2563eb;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: transform 0.2s, background-color 0.2s;
-}
-
-.tombol-lanjut:hover {
-  background-color: #1d4ed8;
-  transform: translateY(-2px);
-}
-
-/* ===================================================
-   4. ANIMASI INTERAKTIF (KOLOM KANAN)
-   =================================================== */
 .kartu-animasi {
   position: relative;
   width: 250px;
   height: 250px;
-  background: linear-gradient(135deg, #1e293b, #0f172a);
-  border-radius: 28px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  border-radius: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.25);
+  animation: melayang 3.5s ease-in-out infinite;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   cursor: pointer;
-  animation: melayang 3s ease-in-out infinite;
-  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Efek saat kursor mouse mendekat */
 .kartu-animasi:hover {
-  transform: scale(1.08) rotate(2deg);
-  box-shadow: 0 25px 50px rgba(37, 99, 235, 0.4);
+  transform: scale(1.06) rotate(1.5deg);
 }
 
 .ikon-utama {
-  font-size: 5rem;
+  font-size: 5.5rem;
   user-select: none;
 }
 
-/* Kapsul kecil yang melayang */
 .item-melayang {
   position: absolute;
-  background: white;
+  background: #ffffff;
   color: #0f172a;
-  padding: 0.4rem 0.85rem;
+  padding: 0.45rem 0.9rem;
   border-radius: 9999px;
-  font-weight: bold;
-  font-size: 0.85rem;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  font-weight: 700;
+  font-size: 0.82rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+  white-space: nowrap;
 }
 
-.item-1 { top: 15px; left: -25px; animation: goyang 2.5s infinite alternate; }
-.item-2 { bottom: 25px; left: -15px; animation: goyang 3.2s infinite alternate; }
-.item-3 { top: 35px; right: -25px; animation: goyang 2s infinite alternate; }
+.item-1 { top: 15px; left: -25px; animation: goyang 2.6s infinite alternate; }
+.item-2 { bottom: 25px; left: -20px; animation: goyang 3.4s infinite alternate; }
+.item-3 { top: 35px; right: -25px; animation: goyang 2.2s infinite alternate; }
 
-/* Kunci gerakan animasi */
 @keyframes melayang {
-  0%, 100% { transform: translateY(0px); } 
-  50% { transform: translateY(-16px); }
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-14px); }
 }
 
 @keyframes goyang {
   0% { transform: translateY(0); }
-  100% { transform: translateY(-10px); }
+  100% { transform: translateY(-8px); }
 }
 
-/* ========= SILDE 1 Bagian 2 ========= */
-
-/* 1. Kunci agar scroll bergerak halus (tidak kaget) */
-html {
-  scroll-behavior: smooth;
-}
-
-/* 2. Pengaturan wadah Slide 2 */
-.slide-detail {
-  background-color: #ffffff; /* latar putih */
-  align-items: flex-start; /* konten di atas */
-  padding-top: 5rem; /* Jarak dari atas */
-  padding-bottom:5rem; /* Jarak dari bawah */
-
-}
-
-/* Pengaturan wadah konten detail */
-.detail-container { 
-  width: 100%; /* Lebar penuh */
-  max-width: 900px; /* Lebar maksimal */
-  margin: 0 auto; /* Tengah horizontal */
+/* ===================================================
+   4. SLIDE 1: BOTTOM DETAIL SECTION (Cards)
+   ================================================== */
+.detail-section {
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
 }
 
 .judul-section {
-  text-align: center; /* Tengah horizontal */
-  margin-bottom: 3rem; /* Jarak bawah */
+  text-align: center;
+  margin-bottom: 2.5rem;
 }
 
 .judul-section h2 {
-  font-size: 2rem; /* Ukuran font */
-  margin: 0.5rem 0; /* Jarak atas dan bawah */
-  color: #1b21c9;
+  font-size: 2rem;
+  color: #0f172a;
+  margin: 0.4rem 0;
 }
 
-.judul-section p{
-  color: #64748b; /* warna abu-abu */
-  font-size: 1.50rem; /* ukuran font */
+.judul-section p {
+  color: #64748b;
+  font-size: 1.05rem;
+  margin: 0;
 }
 
-/* Kartu Grid (Menyusun kartu bersebelahan) */
 .grid-kartu {
-  display: grid; /* Gunakan grid */
-  grid-template-columns:  1fr 1fr; /* 2 kolom sama besar */
-  gap: 1.5rem; /* Jarak antar kartu */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
 }
 
 .kartu-info {
-  background-color: #f8fafc; 
-  border: 1px solid #e2e8f0; /* warna abu-abu muda */
-  border-radius: 12px; /* sudut membulat */
-  padding: 1.5rem; /* jarak dalam */
-  transition: transform 0.25s, box-shadow 0.2s; /* efek transisi */
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
 }
 
-.kartu-info:hover { /* efek saat kursor mendekat */
-  transform: translateY(-5px); /* sedikit naik saat disentuh kursor */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06); /* bayangan lebih besar saat disentuh kursor */
+.kartu-info:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.07);
+  border-color: #cbd5e1;
 }
 
 .kartu-lebar {
-  grid-column: 1 / -1; /* Kartu membentang seluruh kolom */
+  grid-column: 1 / -1;
 }
 
 .ikon-kartu {
   font-size: 2rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
+
 .kartu-info h3 {
   margin: 0 0 0.75rem 0;
-  color: #1e293b;
-  font-size: 1.25rem;
+  color: #0f172a;
+  font-size: 1.3rem;
 }
+
 .kartu-info p {
   color: #475569;
-  line-height: 1.6;
+  line-height: 1.65;
   margin: 0;
 }
-/* List hobi */
+
 .list-hobi {
-  padding-left: 1.2rem;
+  padding-left: 1.25rem;
   color: #475569;
   line-height: 1.8;
-  margin-top: 0.5rem;
+  margin: 0.75rem 0 0 0;
 }
-/* Format teks pengalaman */
+
+/* Work Experience Items */
+.item-pengalaman {
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px dashed #cbd5e1;
+}
+
+.item-pengalaman:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
 .item-pengalaman h4 {
   margin: 0;
   color: #0f172a;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
 }
+
 .item-pengalaman .waktu {
   display: inline-block;
   font-size: 0.85rem;
   color: #2563eb;
-  font-weight: bold;
-  margin: 0.2rem 0 0.5rem 0;
-}
-
-/* Styling detail item pengalaman kerja */
-.item-pengalaman {
-  padding-bottom: 1.25rem;
-  margin-bottom: 1.25rem;
-  border-bottom: 1px dashed #cbd5e1; /* Garis putus-putus pembatas antar pekerjaan */
-}
-
-.item-pengalaman:last-child {
-  border-bottom: none; /* Hilangkan garis di item terakhir */
-  padding-bottom: 0;
-  margin-bottom: 0;
+  font-weight: 700;
+  margin: 0.25rem 0 0.5rem 0;
 }
 
 .instansi {
@@ -262,12 +269,388 @@ html {
 }
 
 .list-tugas {
-  margin: 0.4rem 0 0 1.2rem;
+  margin: 0.5rem 0 0 1.25rem;
   padding: 0;
   color: #334155;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 .list-tugas li {
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.4rem;
+}
+
+/* ===================================================
+   5. SLIDE 2: TOP ANIMATION BANNER
+   =================================================== */
+.slide-projects {
+  background: linear-gradient(180deg, #f8fafc 0%, #edf2f7 100%);
+  border-top: 2px solid #e2e8f0;
+}
+
+.animasi-banner {
+  width: 100%;
+}
+
+.radar-card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  border-radius: 20px;
+  padding: 2rem 2.5rem;
+  color: #ffffff;
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.radar-pulse {
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.4) 0%, rgba(37, 99, 235, 0) 70%);
+  animation: beaconPulse 3s infinite ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes beaconPulse {
+  0% { transform: scale(0.8); opacity: 0.4; }
+  50% { transform: scale(1.4); opacity: 0.8; }
+  100% { transform: scale(0.8); opacity: 0.4; }
+}
+
+.radar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.radar-icon {
+  font-size: 2.75rem;
+}
+
+.radar-text {
+  flex: 1;
+  min-width: 250px;
+}
+
+.radar-tag {
+  display: inline-block;
+  color: #38bdf8;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.radar-text h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.tech-pills {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.pill {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e2e8f0;
+  padding: 0.4rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  backdrop-filter: blur(4px);
+}
+
+/* ===================================================
+   6. SLIDE 2: BOTTOM PROJECT TREE & BRANCHES
+   =================================================== */
+.project-showcase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* PROJECT Root Node */
+.project-root-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.project-root-badge {
+  background-color: #0f172a;
+  color: #ffffff;
+  border: 2px solid #2563eb;
+  padding: 0.8rem 2.5rem;
+  border-radius: 12px;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.25);
+  user-select: none;
+}
+
+/* SVG Tree Branches */
+.tree-connector-svg {
+  width: 100%;
+  height: 60px;
+  margin: 0 0 0.5rem 0;
+}
+
+.tree-connector-svg svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* 3 Project Branch Cards Grid */
+.grid-branches {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.branch-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 1.85rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s, border-color 0.3s;
+  position: relative;
+}
+
+.branch-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 35px rgba(37, 99, 235, 0.12);
+  border-color: #93c5fd;
+}
+
+.branch-highlight {
+  border-top: 3px solid #2563eb;
+}
+
+.branch-icon {
+  font-size: 2.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.branch-card h3 {
+  margin: 0 0 0.75rem 0;
+  color: #0f172a;
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+.branch-desc {
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0 0 1.25rem 0;
+  flex-grow: 1;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.tag {
+  background-color: #f1f5f9;
+  color: #334155;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+}
+
+.link-action {
+  color: #2563eb;
+  font-weight: 700;
+  font-size: 0.92rem;
+  text-decoration: none;
+  transition: color 0.2s, transform 0.2s;
+  display: inline-flex;
+  align-items: center;
+}
+
+.link-action:hover {
+  color: #1d4ed8;
+  transform: translateX(4px);
+}
+
+/* ===================================================
+   6B. FEATURED PROJECT ITEM IN BRANCH CARD
+   =================================================== */
+.project-item-card {
+  margin-top: 1.25rem;
+  padding: 1.25rem;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-align: left;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.project-item-card:hover {
+  border-color: #93c5fd;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
+}
+
+.project-badge {
+  display: inline-block;
+  align-self: flex-start;
+  background: rgba(37, 99, 235, 0.1);
+  color: #2563eb;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.project-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.35;
+}
+
+.project-summary {
+  margin: 0;
+  color: #475569;
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.project-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.stat-pill {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #1e293b;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+}
+
+.project-links-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.35rem;
+}
+
+.btn-project-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.45rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  color: #334155;
+  transition: all 0.2s;
+}
+
+.btn-project-link:hover {
+  border-color: #2563eb;
+  color: #2563eb;
+  background-color: #eff6ff;
+  transform: translateY(-1px);
+}
+
+.btn-project-link.btn-primary {
+  background-color: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+}
+
+.btn-project-link.btn-primary:hover {
+  background-color: #1d4ed8;
+  border-color: #1d4ed8;
+  color: #ffffff;
+}
+
+/* Footer Navigation */
+.slide-footer-nav {
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.btn-back-top {
+  display: inline-block;
+  color: #64748b;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  transition: all 0.2s;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+}
+
+.btn-back-top:hover {
+  color: #0f172a;
+  border-color: #cbd5e1;
+  background-color: #f8fafc;
+}
+
+/* ===================================================
+   7. RESPONSIVE DESIGN (Tablets & Mobile)
+   =================================================== */
+@media (max-width: 880px) {
+  .hero-section {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 2.5rem;
+  }
+
+  .grid-kartu {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-branches {
+    grid-template-columns: 1fr;
+  }
+
+  .tree-connector-svg {
+    display: none;
+  }
+
+  .project-root-container {
+    margin-bottom: 2rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
 }

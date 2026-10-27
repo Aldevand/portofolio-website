@@ -1,34 +1,107 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portofolio - Petra Aldevand Hosyo</title>
+  <title>Portfolio - Petra Aldevand Hosyo</title>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
-  <!-- ================= SLIDE 1 ================= -->
-  <section class="slide" id="slide-1">
-    <div class="slide-content">
+  <!-- ===================================================
+       SLIDE 1: INTRODUCTION & BACKGROUND
+       1. Short Intro (Left)
+       2. Hero Animation (Right)
+       3. Background, Hobbies & Work Experience (Bottom)
+       =================================================== -->
+  <section class="slide slide-main" id="slide-1">
+    <div class="slide-container">
 
-      <!-- Kolom Kiri: Teks Perkenalan -->
-      <div class="hero-text">
-        <span class="badge">Halo Semua 👋</span>
-        <h1>Saya Petra Aldevand Hosyo</h1>
-        <p class="penjelasan">
-          Selamat datang di website profil saya yang berisi profil saya dan juga project-project yang saya kerjakan.
-        </p>
-        <a href="#slide-2" class="tombol-lanjut">Lanjut Mengenal Saya ↓</a>
+      <!-- TOP SECTION: Intro & Interactive Animation -->
+      <div class="hero-section">
+        <!-- 1. Left Column: Short Introduction -->
+        <div class="hero-text">
+          <span class="badge">Hello👋</span>
+          <h1>I am Petra Aldevand Hosyo</h1>
+          <p class="penjelasan">
+            Welcome to my personal portfolio. Here you can explore my professional journey, analytical background, and engineering projects.
+          </p>
+          <a href="#slide-2" class="tombol-lanjut">Explore Projects ↓</a>
+        </div>
+
+        <!-- 2. Right Column: Interactive Hero Animation -->
+        <div class="hero-animation">
+          <div class="kartu-animasi">
+            <div class="ikon-utama">👨‍💻</div>
+            <span class="item-melayang item-1">⚡ Computer</span>
+            <span class="item-melayang item-2">📊 Data</span>
+            <span class="item-melayang item-3">🔬 Physics</span>
+          </div>
+        </div>
       </div>
 
-      <!-- Kolom Kanan: Animasi Interaktif -->
-      <div class="hero-animation">
-        <div class="kartu-animasi">
-          <div class="ikon-utama">👨‍💻</div>
-          <span class="item-melayang item-1">⚡ Komputer</span>
-          <span class="item-melayang item-2">📊 Data</span>
-          <span class="item-melayang item-3">🔬 Fisika</span>
+      <!-- BOTTOM SECTION: 3. Background, Hobbies & Work Experience -->
+      <div class="detail-section">
+        <div class="judul-section">
+          <span class="badge">About Me</span>
+          <h2>A Closer Look at My Journey</h2>
+          <p>An overview of my analytical foundation, personal interests, and professional experience.</p>
+        </div>
+
+        <!-- Grid of Information Cards -->
+        <div class="grid-kartu">
+
+          <!-- Card 1: Background -->
+          <div class="kartu-info">
+            <div class="ikon-kartu">🎯</div>
+            <h3>Background</h3>
+            <p>
+              I possess a deep-rooted passion for logic, numbers, and modern technology. 
+              Learning software development and data science empowers me to transform analytical curiosity into impactful, real-world solutions.
+            </p>
+          </div>
+
+          <!-- Card 2: Hobbies & Interests -->
+          <div class="kartu-info">
+            <div class="ikon-kartu">🎮</div>
+            <h3>Hobbies & Interests</h3>
+            <p>During my free time, I enjoy:</p>
+            <ul class="list-hobi">
+              <li>Reading science & emerging technology publications</li>
+              <li>Solving strategy & puzzle challenges</li>
+              <li>Console gaming on PlayStation</li>
+            </ul>
+          </div>
+
+          <!-- Card 3: Professional Work Experience (Full Width) -->
+          <div class="kartu-info kartu-lebar">
+            <div class="ikon-kartu">💼</div>
+            <h3>Work Experience</h3>
+
+            <!-- Experience 1: BPS -->
+            <div class="item-pengalaman">
+              <h4>Field Enumerator (PPL) — 2026 Economic Census</h4>
+              <span class="waktu">June 2026 – August 2026</span>
+              <p class="instansi">🏢 BPS - Statistics Indonesia · Manokwari, West Papua</p>
+              <ul class="list-tugas">
+                <li>Collected and verified structured microeconomic survey data across <strong>600+ business entities</strong> maintaining strict data hygiene and governance standards.</li>
+                <li>Processed and synchronized field data using the <em>CAPI</em> mobile platform to guarantee zero-error statistical aggregation.</li>
+              </ul>
+            </div>
+
+            <!-- Experience 2: PUPR -->
+            <div class="item-pengalaman">
+              <h4>Information Technology Security Analyst (Apprenticeship)</h4>
+              <span class="waktu">July 2024 – September 2024</span>
+              <p class="instansi">🏛️ Sabo Technical Centre, DGWR Ministry of Public Works and Housing (PUPR) · Sleman, D.I. Yogyakarta</p>
+              <ul class="list-tugas">
+                <li>Conducted systematic web vulnerability assessments utilizing the <strong>OWASP Top 10</strong> framework to evaluate institutional IT infrastructure.</li>
+                <li>Compiled comprehensive technical risk evaluation reports supporting robust system resilience and secure deployment best practices.</li>
+              </ul>
+            </div>
+
+          </div>
+
         </div>
       </div>
 
@@ -36,100 +109,187 @@
   </section>
 
 
+  <!-- ===================================================
+       SLIDE 2: ANIMATION & PROJECTS SHOWCASE
+       1. Animation (Top)
+       2. PROJECT Showcase with 3 Branches (Bottom)
+       =================================================== -->
+  <section class="slide slide-projects" id="slide-2">
+    <div class="slide-container">
 
-
-
-  <!-- ================= SLIDE 2: PERKENALAN LEBIH INTENS ================= -->
-   <section class="slide slide-detail" id="slide-2">
-    <div class="detail-container">
-
-      <!-- Judul Bagian -->
-       <div class="judul-section">
-        <span class="badge">Eskplorasi </span>
-        <h2>Lebih dekat dengan saya</h2>
-        <p>Berikut cerita lengkap mengenai perjalanan, minat, dan pengalaman saya. </p>
-       </div>
-
-
-    <!-- kotak kartu informasi (Grid)-->
-     <div class="grid-kartu">
-
-      <!--Kartu: Cerita Diri-->
-      <div class="kartu-info">
-        <div class="ikon-kartu">🎯</div>
-        <h3>Latar Belakang</h3>
-        <p>
-          Saya memiliki ketertarikan mendalam pada logika, angka, dan teknologi. 
-          Mempelajari web development memberi saya wadah untuk menyalurkan kreativitas 
-          dan kemampuan analisis secara nyata.
-        </p>
+      <!-- TOP: Interactive Project Animation / Tech Radar -->
+      <div class="animasi-banner">
+        <div class="radar-card">
+          <div class="radar-pulse"></div>
+          <div class="radar-content">
+            <div class="radar-icon">🚀</div>
+            <div class="radar-text">
+              <span class="radar-tag">Live Innovation Terminal</span>
+              <h3>Exploring Frontiers in Data & Infrastructure</h3>
+            </div>
+            <div class="tech-pills">
+              <span class="pill">● Data Pipelines</span>
+              <span class="pill">● Neural Networks</span>
+              <span class="pill">● Network Defense</span>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- Kartu 2: Hobi-->
-       <div class="kartu-info">
-        <div class="ikon-kartu">🎮</div>
-        <h3>Hobi</h3>
-        <p>
-          Di waktu senggang, saya senang:
-        </p>
-        <ul class="list-hobi">
-          <li>Membaca artikel sains dan teknologi</li>
-          <li>Bermain game strategi / puzzle</li>
-          <li>Bermain playstation</li>
-        </ul>
-       </div>
+      <!-- BOTTOM: PROJECT Showcase Section -->
+      <div class="project-showcase">
+        
+        <!-- Center Root Box: PROJECT -->
+        <div class="project-root-container">
+          <div class="project-root-badge">PROJECT</div>
+        </div>
 
-        <!-- Kartu 3: Pengalaman Kerja Profesional -->
-         <div class="kartu-info kartu-lebar">
-          <div class="ikon-kartu">💼</div>
-          <h3>Pengalaman Kerja</h3>
+        <!-- Tree Branching Connectors (SVG) -->
+        <div class="tree-connector-svg">
+          <svg viewBox="0 0 900 60" preserveAspectRatio="none">
+            <defs>
+              <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb"/>
+              </marker>
+            </defs>
+            <!-- Vertical root line from PROJECT box -->
+            <line x1="450" y1="0" x2="450" y2="25" stroke="#2563eb" stroke-width="2.5" />
+            <!-- Horizontal distribution bar -->
+            <line x1="150" y1="25" x2="750" y2="25" stroke="#2563eb" stroke-width="2.5" />
+            <!-- Left branch arrow to Data Analyst -->
+            <line x1="150" y1="25" x2="150" y2="55" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow)" />
+            <!-- Center branch arrow to ML + Data Science -->
+            <line x1="450" y1="25" x2="450" y2="55" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow)" />
+            <!-- Right branch arrow to Network Engineer -->
+            <line x1="750" y1="25" x2="750" y2="55" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow)" />
+          </svg>
+        </div>
 
-          <!-- Pengalaman 1: BPS-->
-           <div class="item-pengalaman">
-            <h4>Petugas Pendataan Lapangan (PPL) — Sensus Ekonomi 2026</h4>
-            <span class="waktu">Juni 2026 – Agustus 2026</span>
-            <p class="instansi">🏢 Badan Pusat Statistik (BPS) · Manokwari, Papua Barat</p>
-            <ul class="list-tugas">
-              <li>Melakukan pengumpulan dan validasi data mikroekonomi terstruktur pada <strong>600+ entitas bisnis</strong> dengan standar tata kelola dan kebersihan data (<em>data hygiene</em>).</li>
-              <li>Memproses dan menyusun data mentah lapangan menggunakan aplikasi mobile <em>CAPI</em> guna memastikan hasil agregasi statistik bebas kesalahan.</li>
-            </ul>
-           </div>
+        <!-- 3 Branch Cards: Data Analyst | ML + Data Science | Network Engineer -->
+        <div class="grid-branches">
 
-           <!-- Pengalaman 2: PUPR-->
-            <div class="item-pengalaman">
-              <h4>Information Technology Security Analyst (Apprenticeship)</h4>
-              <span class="waktu">Juli 2024 – September 2024</span>
-              <p class="instansi">🏛️ Balai Teknik Sabo, Ditjen SDA PUPR · Sleman, D.I. Yogyakarta</p>
-              <ul class="list-tugas">
-                <li>Melakukan audit kerentanan web sistematis menggunakan kerangka kerja <strong>OWASP Top 10</strong> untuk mengevaluasi dan mengamankan infrastruktur IT instansi.</li>
-                <li>Menyusun laporan teknis analisis risiko guna mendukung keandalan sistem dan standar deployment yang aman (<em>secure deployment</em>).</li>
-                
-              </ul>
+          <!-- Branch 1: Data Analyst -->
+          <div class="branch-card">
+            <div class="branch-icon">📊</div>
+            <h3>Data Analyst</h3>
+            <p class="branch-desc">
+              Extracting meaningful patterns from complex datasets through exploratory data analysis, business intelligence, and interactive dashboards.
+            </p>
+
+            <!-- Featured Project Item: Teen Mental Health -->
+            <div class="project-item-card">
+              <span class="project-badge">Featured Project</span>
+              <h4 class="project-title">Teen Mental Health & Screen Time Analysis</h4>
+              <p class="project-summary">
+                Interactive Looker Studio dashboard and BigQuery SQL analysis uncovering correlations between 4.5h daily screen time, academic resilience, and mental health indicators across 1,200 teenagers.
+              </p>
+              
+              <!-- Key Project Highlights -->
+              <div class="project-stats">
+                <span class="stat-pill">👥 1,200 Students</span>
+                <span class="stat-pill">📈 5.45 Avg Stress</span>
+                <span class="stat-pill">📱 4.5h Daily Usage</span>
+              </div>
+
+              <!-- Tech Stack Badges -->
+              <div class="tag-list">
+                <span class="tag">Google Looker Studio</span>
+                <span class="tag">BigQuery SQL</span>
+                <span class="tag">EDA & BI</span>
+              </div>
+
+              <!-- Action Links Group -->
+              <div class="project-links-group">
+                <a href="https://datastudio.google.com/reporting/b423c5d6-40b6-46ea-8648-fbde9616bb88/page/p_gwvus6et3d" target="_blank" rel="noopener noreferrer" class="btn-project-link btn-primary">
+                  📊 Live Dashboard ↗
+                </a>
+                <a href="https://github.com/Aldevand/teen-mental-health-screen-time-analysis" target="_blank" rel="noopener noreferrer" class="btn-project-link">
+                  📂 GitHub Repo ↗
+                </a>
+                <a href="https://github.com/Aldevand/teen-mental-health-screen-time-analysis/blob/main/query.sql" target="_blank" rel="noopener noreferrer" class="btn-project-link">
+                  💾 SQL Script ↗
+                </a>
+              </div>
             </div>
 
+          </div>
 
+          <!-- Branch 2: Machine Learning + Data Science -->
+          <div class="branch-card branch-highlight">
+            <div class="branch-icon">🧠</div>
+            <h3>Machine Learning + Data Science</h3>
+            <p class="branch-desc">
+              Architecting predictive statistical models, deep learning pipelines, and automated intelligence to solve real-world analytical problems.
+            </p>
 
+            <!-- Kotak Proyek ML & Computer Vision -->
+            <div class="project-item-card">
+              <!-- 1. Badge / Label Kategori -->
+              <span class="project-badge">Machine Learning</span>
+              <!-- 2. Judul Proyek -->
+              <h4 class="project-title">Classical Computer Vision: Convolution & Sobel Edge Detection</h4>
+              <!-- 3. Ringkasan Project -->
+              <p class="project-summary">
+                An end-to-end mathematical computer vision pipeline built from scratch using NumPy. 
+                Transforms raw pixel matrices (0–255), applies a 3×3 uniform blur filter (1/9) to suppress high-frequency noise, 
+                and extracts clean directional boundaries using dual Sobel operators (Gx & Gy) merged via vector magnitude calculation and 8-bit normalization.
+              </p>
 
+              <!-- 4. Pipeline -->
+              <div class="project-stats">
+                <span class="stat-pill">🔢 Pixel Matrix (0–255)</span>
+                <span class="stat-pill">🧹 3×3 Mean Noise Filter</span>
+                <span class="stat-pill">📐 Sobel Gx & Gy Gradients</span>
+                <span class="stat-pill">⚡ Vector Magnitude & Norm</span>
+              </div>
 
+              <!-- 5. Tag Keahlian / Tools yang Anda Gunakan -->
+              <div class="tag-list">
+                <span class="tag">Python</span>
+                <span class="tag">NumPy</span>
+                <span class="tag">Matrix Convolution</span>
+                <span class="tag">Sobel Edge Detection</span>
+              </div>
 
+              <!-- 6. Tautan Link Repo Project -->
+              <div class="project-links-group">
+                <a href="https://github.com/Aldevand/computer-vision-from-scratch" target="_blank" rel="noopener noreferrer" class="btn-project-link btn-primary">
+                  📂 GitHub Repository ↗
+                </a>
+                <a href="https://github.com/Aldevand/computer-vision-from-scratch/blob/main/basic-cv.ipynb" target="_blank" rel="noopener noreferrer" class="btn-project-link">
+                  📓 View Source Code ↗
+                </a>
+              </div>
+            </div>
+          </div>
 
+          <!-- Branch 3: Network Engineer -->
+          <div class="branch-card">
+            <div class="branch-icon">🌐</div>
+            <h3>Network Engineer</h3>
+            <p class="branch-desc">
+              Designing secure network topologies, monitoring protocol communications, and auditing systems with industry-standard cybersecurity frameworks.
+            </p>
+            <div class="tag-list">
+              <span class="tag">OWASP Top 10</span>
+              <span class="tag">Network Security</span>
+              <span class="tag">Cisco Packet Tracer</span>
+              <span class="tag">Wireshark</span>
+            </div>
+            <a href="#slide-2" class="link-action">Explore Network Projects →</a>
+          </div>
 
+        </div>
 
+      </div>
 
-
-         </div>
-
-     </div>
+      <!-- Navigation back to top -->
+      <div class="slide-footer-nav">
+        <a href="#slide-1" class="btn-back-top">↑ Back to Overview</a>
+      </div>
 
     </div>
-   </section> 
-
-
-
-
-
-
-
+  </section>
 
 </body>
 </html>

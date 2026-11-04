@@ -1,6 +1,20 @@
 /* ===================================================
-   1. GLOBAL RESET & BASE STYLING
+   1. Section 1: GLobal Styles
    =================================================== */
+
+#globe-container {
+  width: 360px;
+  height: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: grab; /* Kursor tangan terbuka */
+}
+
+#globe-container:active {
+  cursor: grabbing; /* Kursor tangan menggenggam saat bola diputar */
+}
+
 * {
   box-sizing: border-box;
 }
@@ -12,8 +26,9 @@ html {
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background-color: #f8fafc;
-  color: #1e293b;
+  background-color: #0b0f19;
+  background-position: fixed;
+  color: #f8fafc;
   line-height: 1.6;
 }
 
@@ -36,13 +51,14 @@ body {
   display: flex;
   flex-direction: column;
   gap: 3.5rem;
+  pointer-events: auto;
 }
 
 /* Common Badge Style */
 .badge {
   display: inline-block;
   background-color: rgba(37, 99, 235, 0.1);
-  color: #2563eb;
+  color: #d6dae2;
   padding: 0.35rem 0.9rem;
   border-radius: 9999px;
   font-size: 0.85rem;
@@ -72,12 +88,12 @@ body {
   font-size: 2.75rem;
   font-weight: 800;
   margin: 0.5rem 0 1rem 0;
-  color: #0f172a;
+  color: #d1d5dd;
   line-height: 1.15;
 }
 
 .penjelasan {
-  color: #475569;
+  color: #c8ced6;
   font-size: 1.15rem;
   line-height: 1.7;
   margin-bottom: 2rem;
@@ -163,9 +179,10 @@ body {
 /* ===================================================
    4. SLIDE 1: BOTTOM DETAIL SECTION (Cards)
    ================================================== */
+/* 1. Garis pembatas atas (border-top) */
 .detail-section {
   padding-top: 1rem;
-  border-top: 1px solid #e2e8f0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Dari #e2e8f0 ganti ke garis tipis transparan */
 }
 
 .judul-section {
@@ -173,16 +190,17 @@ body {
   margin-bottom: 2.5rem;
 }
 
+/* 2. Judul 'A Closer Look at My Journey' */
 .judul-section h2 {
   font-size: 2rem;
-  color: #0f172a;
+  color: #f8fafc; /* GANTI DARI #0f172a JADI PUTIH BERSIH */
   margin: 0.4rem 0;
 }
 
+/* 3. Paragraf deskripsi di bawah judul */
 .judul-section p {
-  color: #64748b;
+  color: #94a3b8; /* GANTI DARI #64748b JADI ABU-ABU TERANG */
   font-size: 1.05rem;
-  margin: 0;
 }
 
 .grid-kartu {

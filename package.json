@@ -18,5 +18,8 @@
   "license": "MIT",
   "devDependencies": {
     "vite": "^6.2.0"
+  },
+  "dependencies": {
+    "globe.gl": "^2.46.2"
   }
 }
